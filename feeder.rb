@@ -2,7 +2,7 @@ require 'rss'
 require 'open-uri'
 
 # URL of the RSS feed
-rss_url = 'https://www.chasingthedonkey.com/croatia-travel-blog/feed/'
+rss_url = 'https://media.rss.com/allthingscroatia/feed.xml'
 
   content = URI.open(rss_url).read
 
