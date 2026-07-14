@@ -2,7 +2,7 @@ require 'rss'
 require 'open-uri'
 
 # URL of the RSS feed
-rss_url = 'https://media.rss.com/allthingscroatia/feed.xml'
+rss_url = 'https://news.google.com/rss/search?q=Croatia&hl=en-US&gl=US&ceid=US:en'
 
   content = URI.open(rss_url).read
 
