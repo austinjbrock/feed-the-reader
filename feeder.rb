@@ -1,5 +1,6 @@
 require 'rss'
 require 'open-uri'
+require 'nokogiri'
 
 # URL of the RSS feed
 rss_url = 'https://news.google.com/rss/search?q=Croatia&hl=en-US&gl=US&ceid=US:en'
@@ -13,7 +14,9 @@ rss_url = 'https://news.google.com/rss/search?q=Croatia&hl=en-US&gl=US&ceid=US:e
   feed.items.each do |item|
     puts "Title: #{item.title}"
     puts "Link: #{item.link}"
-    puts "Description: #{item.description}"
+    clean_description = item.description.gsub(/<\/?[^>]*>/, "") # Remove HTML tags from description
+    
+    puts "Description: #{clean_description}"
     puts "PubDate: #{item.pubDate}"
     #Separate each article by dashes
     puts "---" * 10 
